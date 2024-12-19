@@ -5,137 +5,176 @@ General
 ================================================*/
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: #000;
+}
+
+body {
+  background: radial-gradient(#333, #111);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  overflow: hidden;
+}
+
+/*================================================
+
+Header
+
+================================================*/
+
+header {
+  background-color: #333;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #444;
+}
+
+.logo {
+  max-width: 150px;
+  height: auto;
+}
+
+/*================================================
+
+Footer
+
+================================================*/
+
+footer {
+  background-color: #222;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  padding: 10px 20px;
+  border-top: 1px solid #444;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+footer a {
+  color: #0af;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/*================================================
+
+Score
+
+================================================*/
+
+.score {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/*================================================
+
+Stage
+
+================================================*/
+
+.stage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+/*================================================
+
+Tiles
+
+================================================*/
+
+.tile {
+  background: rgba(0, 0, 0, 0.15);
+  position: absolute;
+  transition: background 3000ms, box-shadow 3000ms, opacity 3000ms, transform 3000ms;
+  transform: translateZ(0);
+}
+
+.tile:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  height: 0;
+  width: 0;
+  opacity: 0;
+  transition: opacity 300ms;
+}
+
+.tile.path:before {
+  opacity: 1;
+}
+
+.tile.up:before {
+  border-bottom: 4px inset rgba(255, 255, 255, 0.15);
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+}
+
+.tile.down:before {
+  border-top: 4px inset rgba(255, 255, 255, 0.15);
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+}
+
+.tile.left:before {
+  border-right: 4px inset rgba(255, 255, 255, 0.15);
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+}
+
+.tile.right:before {
+  border-left: 4px inset rgba(255, 255, 255, 0.15);
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+}
+
+@media (max-width: 900px), (max-height: 900px) {
+  .tile.up:before,
+  .tile.down:before,
+  .tile.left:before,
+  .tile.right:before {
+    border-width: 3px;
   }
-  
-  html,
-  body {
-    background-color: #000;
-    height: 100%;
+}
+
+@media (max-width: 500px), (max-height: 500px) {
+  .tile.up:before,
+  .tile.down:before,
+  .tile.left:before,
+  .tile.right:before {
+    border-width: 2px;
   }
-  
-  body {
-    background: #222;
-    background: radial-gradient(#333, #111);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: #fff;
-    font: 100%/1.5 sans-serif;
-    overflow: hidden;
-  }
-  
-  /*================================================
-  
-  Score
-  
-  ================================================*/
-  
-  .score {
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 16px;
-    font-weight: bold;
-    padding-top: 5px;
-    text-align: center;
-  }
-  
-  /*================================================
-  
-  Stage
-  
-  ================================================*/
-  
-  .stage {
-    bottom: 0;
-    left: 0;
-    margin: auto;
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: 2;
-  }
-  
-  /*================================================
-  
-  Tiles
-  
-  ================================================*/
-  
-  .tile {
-    background: rgba(0, 0, 0, 0.15);
-    position: absolute;
-    transition-property:
-      background,
-      box-shadow,
-      opacity,
-      transform
-    ;
-    transform: translateZ(0);
-    transition-duration: 3000ms;
-  }
-  
-  .tile:before {
-    bottom: 0;
-    content: '';
-    height: 0;
-    left: 0;
-    margin: auto;
-    opacity: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 0;
-    transition: opacity 300ms;
-  }
-  
-  .tile.path:before {
-    opacity: 1;
-  }
-  
-  .tile.up:before {
-    border-bottom: 4px inset rgba(255, 255, 255, 0.15);
-    border-left: 4px solid transparent;
-    border-right: 4px solid transparent;
-  }
-  
-  .tile.down:before {
-    border-top: 4px inset rgba(255, 255, 255, 0.15);
-    border-left: 4px solid transparent;
-    border-right: 4px solid transparent;
-  }
-  
-  .tile.left:before { 
-    border-right: 4px inset rgba(255, 255, 255, 0.15);
-    border-top: 4px solid transparent;
-    border-bottom: 4px solid transparent;
-  }
-  
-  .tile.right:before { 
-    border-left: 4px inset rgba(255, 255, 255, 0.15);
-    border-top: 4px solid transparent;
-    border-bottom: 4px solid transparent;
-  }
-  
-  @media (max-width: 900px), (max-height: 900px) {
-    .tile.up:before,
-    .tile.down:before,
-    .tile.left:before,
-    .tile.right:before {
-      border-width: 3px;
-    }
-  }
-  
-  @media (max-width: 500px), (max-height: 500px) {
-    .tile.up:before,
-    .tile.down:before,
-    .tile.left:before,
-    .tile.right:before {
-      border-width: 2px;
-    }
-  }
-  
-  .tile.pressed {
-    background: rgba(0, 0, 0, 0.3);
-    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.6);
-    transition-duration: 0ms;
-  }
+}
+
+
+

@@ -1,6 +1,39 @@
-<link rel="stylesheet" href="style.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="An engaging math game for all ages.">
+  <title>Snake Bite</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="img/favicon.png" type="image/x-icon">
+</head>
+<body>
+  <!-- Header with logo -->
+  <header>
+    <img src="img/logo.png" alt="Game Logo" class="logo">
+  </header>
 
-<div class="score">0</div>
-<div class="stage"></div>
+  <!-- Main container for the game -->
+  <main>
+    <!-- Score display with accessibility improvements -->
+    <div class="score" aria-live="polite">0</div>
 
-<script src="main.js"></script>
+    <!-- Game stage area -->
+    <div class="stage">
+      <!-- Placeholder for initial content or game elements -->
+      <p>Game starts here...</p>
+    </div>
+  </main>
+
+  <!-- Footer for additional information -->
+  <footer>
+    <p>&copy; 2024 SnakeBite. All rights reserved.</p>
+    <p>Develop By<a href="https://aeroer.live" target="_blank" rel="noopener noreferrer">Aeroer.Live</a></p>
+  </footer>
+
+  <!-- JavaScript file loaded with defer for better performance -->
+  <script src="main.js" defer></script>
+  <script src="sound.js" defer></script>
+</body>
+</html>
