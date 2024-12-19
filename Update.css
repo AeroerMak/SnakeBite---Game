@@ -1,0 +1,53 @@
+/* Dynamic background animation */
+body {
+    background: radial-gradient(circle at center, #333, #111);
+    animation: backgroundAnimation 10s infinite alternate;
+  }
+  
+  @keyframes backgroundAnimation {
+    0% {
+      background: radial-gradient(circle at top left, #333, #111);
+    }
+    100% {
+      background: radial-gradient(circle at bottom right, #111, #333);
+    }
+  }
+  
+  /* Enhanced score display */
+  .score {
+    font-size: 24px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.8);
+    text-shadow: 0 0 5px #fff, 0 0 10px rgba(255, 255, 255, 0.5);
+    animation: pulse 1s infinite alternate;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.1);
+    }
+  }
+  
+  /* Glowing stage border */
+  .stage {
+    border: 5px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Tiles with gradient and hover effect */
+  .tile {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.1));
+    border-radius: 5px;
+    transition: transform 0.3s, background 0.3s;
+  }
+  
+  .tile:hover {
+    transform: scale(1.1);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.7));
+  }
+  
