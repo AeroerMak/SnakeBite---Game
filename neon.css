@@ -17,12 +17,9 @@ body {
 }
 
 body {
-  background: radial-gradient(#333, #111);
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  color: #fff;
-  font-family: 'Arial', sans-serif;
+  background: radial-gradient(circle at center, #0d0d0d, #000000);
+  color: #e6e6e6;
+  font-family: 'Roboto', sans-serif;
   font-size: 16px;
   line-height: 1.5;
   overflow: hidden;
@@ -35,17 +32,19 @@ Header
 ================================================*/
 
 header {
-  background-color: #333;
-  padding: 10px 20px;
+  background: linear-gradient(90deg, #00f3ff, #00f3ff, transparent);
+  padding: 15px 30px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: 1px solid #444;
+  border-bottom: 1px solid #00f3ff;
+  box-shadow: 0 4px 20px rgba(0, 243, 255, 0.5);
 }
 
 .logo {
-  max-width: 150px;
+  max-width: 200px;
   height: auto;
+  filter: drop-shadow(0 0 10px #00f3ff);
 }
 
 /*================================================
@@ -55,24 +54,27 @@ Footer
 ================================================*/
 
 footer {
-  background-color: #222;
-  color: rgba(255, 255, 255, 0.7);
+  background: linear-gradient(90deg, #1e1e1e, #000000);
+  color: rgba(230, 230, 230, 0.8);
   text-align: center;
-  padding: 10px 20px;
-  border-top: 1px solid #444;
+  padding: 15px 30px;
+  border-top: 1px solid #00f3ff;
   position: fixed;
   bottom: 0;
   width: 100%;
+  box-shadow: 0 -4px 15px rgba(0, 243, 255, 0.3);
 }
 
 footer a {
-  color: #0af;
+  color: #00f3ff;
   text-decoration: none;
   margin: 0 5px;
+  text-shadow: 0 0 5px #00f3ff;
 }
 
 footer a:hover {
-  text-decoration: underline;
+  color: #fff;
+  text-shadow: 0 0 10px #00f3ff, 0 0 20px #00f3ff;
 }
 
 /*================================================
@@ -82,11 +84,12 @@ Score
 ================================================*/
 
 .score {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 35px;
+  color: #00f3ff;
+  font-size: 40px;
   font-weight: bold;
-  text-align: center;
-  margin-top: 10px;
+  text-align: left;
+  margin-left: 20px;
+  text-shadow: 0 0 10px #00f3ff, 0 0 20px #00f3ff;
 }
 
 /*================================================
@@ -101,6 +104,11 @@ Stage
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  border: 2px solid #00f3ff;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 243, 255, 0.7);
 }
 
 /*================================================
@@ -110,10 +118,11 @@ Tiles
 ================================================*/
 
 .tile {
-  background: rgba(0, 0, 0, 0.15);
+  background: rgba(0, 255, 255, 0.2);
   position: absolute;
-  transition: background 3000ms, box-shadow 3000ms, opacity 3000ms, transform 3000ms;
-  transform: translateZ(0);
+  transition: background 500ms ease, box-shadow 500ms ease, transform 500ms ease;
+  box-shadow: 0 0 10px rgba(0, 243, 255, 0.4);
+  border-radius: 5px;
 }
 
 .tile:before {
@@ -127,7 +136,7 @@ Tiles
   height: 0;
   width: 0;
   opacity: 0;
-  transition: opacity 300ms;
+  transition: opacity 300ms ease;
 }
 
 .tile.path:before {
@@ -135,25 +144,25 @@ Tiles
 }
 
 .tile.up:before {
-  border-bottom: 4px inset rgba(255, 255, 255, 0.15);
+  border-bottom: 4px solid rgba(0, 243, 255, 0.7);
   border-left: 4px solid transparent;
   border-right: 4px solid transparent;
 }
 
 .tile.down:before {
-  border-top: 4px inset rgba(255, 255, 255, 0.15);
+  border-top: 4px solid rgba(0, 243, 255, 0.7);
   border-left: 4px solid transparent;
   border-right: 4px solid transparent;
 }
 
 .tile.left:before {
-  border-right: 4px inset rgba(255, 255, 255, 0.15);
+  border-right: 4px solid rgba(0, 243, 255, 0.7);
   border-top: 4px solid transparent;
   border-bottom: 4px solid transparent;
 }
 
 .tile.right:before {
-  border-left: 4px inset rgba(255, 255, 255, 0.15);
+  border-left: 4px solid rgba(0, 243, 255, 0.7);
   border-top: 4px solid transparent;
   border-bottom: 4px solid transparent;
 }
@@ -177,32 +186,30 @@ Tiles
 }
 
 
-
-/* Button in Bottom-Right Corner */
 .corner-button {
   position: fixed;
   bottom: 20px;
   right: 20px;
   padding: 10px 20px;
-  background-color: #00ffcc; /* Vibrant neon green-blue */
-  color: #000; /* Black text for contrast */
-  border: none;
+  background-color: #fff; /* White background */
+  color: #000; /* Black text */
+  border: 2px solid #000; /* Black border */
   border-radius: 5px;
   font-size: 16px;
   cursor: pointer;
   z-index: 20;
-  box-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc; /* Neon glow */
+  box-shadow: 0 0 10px #000, 0 0 20px #000, 0 0 30px #000; /* Black glowing effect */
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .corner-button:hover {
-  background-color: #00e6b3; /* Slightly darker neon color */
-  box-shadow: 0 0 15px #00e6b3, 0 0 30px #00e6b3, 0 0 45px #00e6b3; /* Enhance glow on hover */
+  background-color: #000; /* Black background on hover */
+  color: #fff; /* White text on hover */
+  box-shadow: 0 0 15px #fff, 0 0 30px #fff, 0 0 45px #fff; /* White glowing effect on hover */
 }
 
 .corner-button:focus {
   outline: none;
-  box-shadow: 0 0 20px #00ffcc, 0 0 40px #00ffcc, 0 0 60px #00ffcc; /* Extra glow on focus */
+  box-shadow: 0 0 20px #fff, 0 0 40px #fff, 0 0 60px #fff; /* Strong white glow on focus */
 }
-
 
