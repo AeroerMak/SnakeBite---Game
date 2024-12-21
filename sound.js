@@ -1,7 +1,7 @@
 // ========== Audio Files ==========
-const clickSound = new Audio('sounds/click.mp3');
+const clickSound = new Audio('sounds/background.mp3');
 const errorSound = new Audio('sounds/background.mp3');
-const bgMusic = new Audio('sounds/');
+const bgMusic = new Audio('sounds/bgMusic.mp3');
 
 // Preload audio
 clickSound.preload = 'auto';
